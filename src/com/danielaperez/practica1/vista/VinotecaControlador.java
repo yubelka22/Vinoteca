@@ -111,7 +111,7 @@ public class VinotecaControlador implements ActionListener, ListSelectionListene
 
         private void cargarDatosConfiguracion() throws IOException {
             Properties configuracion = new Properties();
-            configuracion.load(new FileReader("vehiculos.conf"));
+            configuracion.load(new FileReader("vinos.conf"));
             ultimaRutaExportada= new File(configuracion.getProperty("ultimaRutaExportada"));
         }
 
@@ -123,8 +123,8 @@ public class VinotecaControlador implements ActionListener, ListSelectionListene
             Properties configuracion=new Properties();
             configuracion.setProperty("ultimaRutaExportada"
                     ,ultimaRutaExportada.getAbsolutePath());
-            configuracion.store(new PrintWriter("vehiculos.conf")
-                    ,"Datos configuracion vehiculos");
+            configuracion.store(new PrintWriter("vinos.conf")
+                    ,"Datos configuracion vinos");
         }
 
         @Override
@@ -211,13 +211,13 @@ public class VinotecaControlador implements ActionListener, ListSelectionListene
                     }
                     break;
                 case "VinoTinto":
-                    vista.atributoTxt.setText("Aroma");
+                    vista.atributos.setText("Aroma");
                     break;
                 case "VinoBlanco":
-                    vista.atributoTxt.setText("Color");
+                    vista.atributos.setText("Color");
                     break;
                 case "VinoRosado":
-                    vista.atributoTxt.setText("Sabor");
+                    vista.atributos.setText("Sabor");
                     break;
                 case "Limpiar":
                     limpiarCampos();
@@ -250,15 +250,14 @@ public class VinotecaControlador implements ActionListener, ListSelectionListene
                 vista.precio.setText((String.valueOf(vinoSeleccionado.getPrecio())));
                 if (vinoSeleccionado instanceof VinoBlanco) {
                     vista.btnVinoBlanco.doClick();
-                    vista.atributoTxt.setText(String.valueOf(((VinoBlanco) vinoSeleccionado).getColor()));
+                    vista.atributos.setText(String.valueOf(((VinoBlanco) vinoSeleccionado).getColor()));
                 } else
                     if (vinoSeleccionado instanceof VinoTinto){
                     vista.btnVinoTinto.doClick();
-                    vista.atributoTxt.setText(String.valueOf(((VinoTinto)vinoSeleccionado).getAroma()));
-                }else
-                    if(vinoSeleccionado instanceof VinoRosado){
-                        vista.btnVinoTinto.doClick();
-                        vista.atributoTxt.setText(String.valueOf(((VinoRosado)vinoSeleccionado).getSabor()));
+                    vista.atributos.setText(String.valueOf(((VinoTinto)vinoSeleccionado).getAroma()));
+                }else {
+                        vista.btnVinoRosado.doClick();
+                        vista.atributos.setText(String.valueOf(((VinoRosado)vinoSeleccionado).getSabor()));
                     }
             }
         }

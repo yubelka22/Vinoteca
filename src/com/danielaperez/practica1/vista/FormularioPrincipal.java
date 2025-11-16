@@ -22,6 +22,7 @@ public class FormularioPrincipal {
     public JList list1;
     public JTextField atributoTxt;
     public JButton limpiarButton;
+    public JLabel atributos;
 
     public JFrame frame;
 

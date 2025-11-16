@@ -94,7 +94,7 @@ public class VinotecaModelo {
                 nodoVino = documento.createElement("VinoBlanco");
             } else if (unVino instanceof VinoTinto) {
                 nodoVino = documento.createElement("VinoTinto");
-            } else if (unVino instanceof VinoTinto) {
+            } else {
                 nodoVino = documento.createElement("VinoRosado");
             }
             raiz.appendChild(nodoVino);
@@ -128,21 +128,21 @@ public class VinotecaModelo {
             nodoVino.appendChild(nodoDatos);
 
             texto = documento.createTextNode(String.valueOf(unVino.getPorcentajeAlcohol()));
-            nodoVino.appendChild(nodoDatos);
+            nodoDatos.appendChild(texto);
 
             nodoDatos = documento.createElement("precio");
             nodoVino.appendChild(nodoDatos);
 
-            nodoDatos = documento.createElement(String.valueOf(unVino.getPrecio()));
-            nodoDatos.appendChild(nodoDatos);
+            texto = documento.createTextNode(String.valueOf(unVino.getPrecio()));
+            nodoVino.appendChild(texto);
 
-            nodoDatos = documento.createElement("Denominación Origen");
+            nodoDatos = documento.createElement("denominacion-origen");
             nodoVino.appendChild(nodoDatos);
 
-            nodoDatos = documento.createElement(unVino.getDenominacionOrigen());
-            nodoVino.appendChild(nodoDatos);
+            texto = documento.createTextNode(unVino.getDenominacionOrigen());
+            nodoDatos.appendChild(texto);
 
-            //como hay un campo que depende del tipo de vehiculo
+            //como hay un campo que depende del tipo de vino
             //volvemos a comprobar
             if (unVino instanceof VinoBlanco) {
                 nodoDatos = documento.createElement("Color");
@@ -198,6 +198,7 @@ public class VinotecaModelo {
                 nuevoVinoBlanco.setPorcentajeAlcohol(Integer.parseInt(nodoVino.getChildNodes().item(3).getTextContent()));
                 nuevoVinoBlanco.setPrecio(Double.parseDouble(nodoVino.getChildNodes().item(4).getTextContent()));
                 nuevoVinoBlanco.setDenominacionOrigen(nodoVino.getChildNodes().item(5).getTextContent());
+                nuevoVinoBlanco.setColor(nodoVino.getChildNodes().item(6).getTextContent());
                 listaVinos.add(nuevoVinoBlanco);
             } else {
                 if (nodoVino.getTagName().equals("Vino Tinto")) {
@@ -208,6 +209,7 @@ public class VinotecaModelo {
                     nuevoVinoTinto.setPorcentajeAlcohol(Integer.parseInt(nodoVino.getChildNodes().item(3).getTextContent()));
                     nuevoVinoTinto.setPrecio(Double.parseDouble(nodoVino.getChildNodes().item(4).getTextContent()));
                     nuevoVinoTinto.setDenominacionOrigen(nodoVino.getChildNodes().item(5).getTextContent());
+                    nuevoVinoTinto.setAroma(nodoVino.getChildNodes().item(6).getTextContent());
                     listaVinos.add(nuevoVinoTinto);
                 } else if (nodoVino.getTagName().equals("Vino Rosado")) {
                     nuevoVinoRosado = new VinoRosado();
@@ -217,6 +219,7 @@ public class VinotecaModelo {
                     nuevoVinoRosado.setPorcentajeAlcohol(Integer.parseInt(nodoVino.getChildNodes().item(3).getTextContent()));
                     nuevoVinoRosado.setPrecio(Double.parseDouble(nodoVino.getChildNodes().item(4).getTextContent()));
                     nuevoVinoRosado.setDenominacionOrigen(nodoVino.getChildNodes().item(5).getTextContent());
+                    nuevoVinoRosado.setSabor(nodoVino.getChildNodes().item(6).getTextContent());
                     listaVinos.add(nuevoVinoRosado);
                 }
             }
