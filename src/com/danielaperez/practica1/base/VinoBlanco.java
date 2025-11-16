@@ -6,9 +6,13 @@ public class VinoBlanco extends Vino {
 
     private String color;
 
-    public VinoBlanco(double precio, String marca, LocalDate fechaCreacion, LocalDate fechaCaducidad,
-                      int porcentajeAlcohol, String denominacionOrigen, String color) {
-        super(precio, marca, fechaCreacion, fechaCaducidad, porcentajeAlcohol, denominacionOrigen);
+    public VinoBlanco(){
+
+    }
+
+    public VinoBlanco(String marca, LocalDate fechaCreacion, LocalDate fechaCaducidad,
+                      int porcentajeAlcohol, double precio, String denominacionOrigen, String color) {
+        super(marca, fechaCreacion, fechaCaducidad, porcentajeAlcohol, precio, denominacionOrigen);
         this.color = color;
     }
 

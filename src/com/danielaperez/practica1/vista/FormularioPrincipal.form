@@ -14,17 +14,29 @@
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
     <colspec value="fill:d:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
-    <colspec value="fill:max(d;4px):noGrow"/>
+    <colspec value="fill:92px:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
-    <colspec value="fill:max(d;4px):noGrow"/>
+    <colspec value="fill:81px:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:max(d;4px):noGrow"/>
     <constraints>
-      <xy x="20" y="20" width="525" height="400"/>
+      <xy x="21" y="20" width="403" height="426"/>
     </constraints>
-    <properties/>
+    <properties>
+      <background color="-14655213"/>
+    </properties>
     <border type="none"/>
     <children>
       <component id="965d1" class="javax.swing.JLabel">
@@ -72,7 +84,7 @@
           <text value="Marca"/>
         </properties>
       </component>
-      <component id="94450" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="94450" class="javax.swing.JTextField" binding="marcaTxt">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="5" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -117,14 +129,14 @@
           <text value="Precio"/>
         </properties>
       </component>
-      <component id="7d6c9" class="com.github.lgooddatepicker.components.DatePicker" binding="fechaCreacion">
+      <component id="7d6c9" class="com.github.lgooddatepicker.components.DatePicker" binding="fechaCreacionDPicker">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties/>
       </component>
-      <component id="96ccc" class="com.github.lgooddatepicker.components.DatePicker" binding="fechaCaducidad">
+      <component id="96ccc" class="com.github.lgooddatepicker.components.DatePicker" binding="fechaCaducidadDPicker">
         <constraints>
           <grid row="6" column="2" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
@@ -171,6 +183,74 @@
             <item value="Rueda"/>
             <item value="Priorat"/>
           </model>
+        </properties>
+      </component>
+      <component id="37fa3" class="javax.swing.JButton" binding="crearButton" default-binding="true">
+        <constraints>
+          <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <text value="Crear"/>
+        </properties>
+      </component>
+      <component id="5181e" class="javax.swing.JButton" binding="importarButton" default-binding="true">
+        <constraints>
+          <grid row="18" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <text value="Importar"/>
+        </properties>
+      </component>
+      <component id="3f9ce" class="javax.swing.JButton" binding="exportarButton" default-binding="true">
+        <constraints>
+          <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <text value="Exportar"/>
+        </properties>
+      </component>
+      <scrollpane id="a423">
+        <constraints>
+          <grid row="16" column="2" row-span="5" col-span="5" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="34e77" class="javax.swing.JList" binding="list1" default-binding="true">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="b9080" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <text value="Atributo"/>
+        </properties>
+      </component>
+      <component id="8638c" class="javax.swing.JTextField" binding="atrubitoTxt">
+        <constraints>
+          <grid row="14" column="2" row-span="1" col-span="5" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="16a40" class="javax.swing.JButton" binding="limpiarButton" default-binding="true">
+        <constraints>
+          <grid row="22" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <text value="Limpiar"/>
         </properties>
       </component>
     </children>

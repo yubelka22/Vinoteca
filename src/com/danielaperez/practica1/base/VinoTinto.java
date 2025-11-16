@@ -6,9 +6,12 @@ public class VinoTinto extends Vino {
 
     private String aroma;
 
-    public VinoTinto(double precio, String marca, LocalDate fechaCreacion, LocalDate fechaCaducidad,
-                     int porcentajeAlcohol, String denominacionOrigen, String aroma) {
-        super(precio, marca, fechaCreacion, fechaCaducidad, porcentajeAlcohol, denominacionOrigen);
+    public VinoTinto(){
+
+    }
+    public VinoTinto(String marca, LocalDate fechaCreacion, LocalDate fechaCaducidad,
+                     int porcentajeAlcohol, double precio, String denominacionOrigen,   String aroma) {
+        super(marca, fechaCreacion, fechaCaducidad, porcentajeAlcohol, precio,  denominacionOrigen);
         this.aroma = aroma;
     }
 

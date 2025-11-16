@@ -8,7 +8,7 @@ public class Principal {
     public static void main(String[] args) {
 
         FormularioPrincipal vista = new FormularioPrincipal();
-        VinotecaModelo vinotecaModelo = new VinotecaModelo();
+       VinotecaModelo vinotecaModelo = new VinotecaModelo();
         VinotecaControlador vinotecaControlador = new VinotecaControlador(vista, vinotecaModelo);
     }
 }

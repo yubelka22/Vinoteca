@@ -9,17 +9,20 @@ public class Vino {
     private LocalDate fechaCaducidad;
     private int porcentajeAlcohol;
     private double precio;
-    private String sabor;
     private String denominacionOrigen;
 
-    public Vino(double precio, String marca, LocalDate fechaCreacion, LocalDate fechaCaducidad,
-                int porcentajeAlcohol, String denominacionOrigen) {
+    public Vino( String marca, LocalDate fechaCreacion, LocalDate fechaCaducidad,
+                int porcentajeAlcohol, double precio, String denominacionOrigen) {
         this.precio = precio;
         this.marca = marca;
         this.fechaCreacion = fechaCreacion;
         this.fechaCaducidad = fechaCaducidad;
         this.porcentajeAlcohol = porcentajeAlcohol;
         this.denominacionOrigen = denominacionOrigen;
+    }
+
+    public Vino() {
+
     }
 
     public double getPrecio() {
