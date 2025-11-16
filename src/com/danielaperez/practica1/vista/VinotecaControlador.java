@@ -2,6 +2,7 @@ package com.danielaperez.practica1.vista;
 
 import com.danielaperez.practica1.base.Vino;
 import com.danielaperez.practica1.base.VinoBlanco;
+import com.danielaperez.practica1.base.VinoRosado;
 import com.danielaperez.practica1.base.VinoTinto;
 import com.danielaperez.practica1.util.Util;
 import org.xml.sax.SAXException;
@@ -21,7 +22,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Properties;
 
-public class VinotecaControlador {
+public class VinotecaControlador implements ActionListener, ListSelectionListener, WindowListener{
 
         private FormularioPrincipal vista;
         private VinotecaModelo modelo;
@@ -60,7 +61,7 @@ public class VinotecaControlador {
             if (vista.precio.getText().isEmpty()){
                 camposVacios.append("\n-Precio del Vino");
             }
-            if (vista.atrubitoTxt.getText().isEmpty()){
+            if (vista.atributoTxt.getText().isEmpty()){
                 camposVacios.append("\n-Color, Aroma y Sabor del Vino");
             }
             if (camposVacios.length()>0){
@@ -72,10 +73,11 @@ public class VinotecaControlador {
 
         private void limpiarCampos() {
             vista.marcaTxt.setText(null);
-            vista.marcaTxt.setText(null);
-            vista.modeloTxt.setText(null);
-            vista.fechaMatriculacionDPicker.setText(null);
-            vista.kmsPlazasTxt.setText(null);
+            vista.fechaCreacionDPicker.setText(null);
+            vista.fechaCaducidadDPicker.setText(null);
+            vista.porcentajeAlcohol.setText(null);
+            vista.precio.setText(null);
+            vista.atributoTxt.setText(null);
         }
 
         //listener botones
@@ -101,9 +103,9 @@ public class VinotecaControlador {
 
         public void refrescar() {
             vista.dlmVino.clear();
-            //modelo.obtenerVehiculos -> contiene la lista de vehiculos
-            for (Vino unVehiculo:modelo.obtenerVinos()) {
-                vista.dlmVino.addElement(unVehiculo);
+            //modelo.obtenerVinos -> contiene la lista de Vino
+            for (Vino unVino:modelo.obtenerVinos()) {
+                vista.dlmVino.addElement(unVino);
             }
         }
 
@@ -130,26 +132,48 @@ public class VinotecaControlador {
             String actionCommand=e.getActionCommand();
 
             switch (actionCommand) {
-                case "Nuevo":
+                case "Crear":
                     if (hayCamposVacios()) {
-                        Util.mensajeError("Los siguientes campos estan vacios " +
-                                "\n Matricula\nMarca\nModelo\nFecha matriculacion" +
-                                "\n"+vista.kmsPlazasLbl.getText());
                         break;
                     }
-                    if (modelo.existeMatricula(vista.matriculaTxt.getText())) {
-                        Util.mensajeError("Ya existe un vehiculo con la matricula" +
-                                "\n"+vista.matriculaTxt.getText());
+                    int porcentajeAlcohol= 0;
+                    try{
+                        porcentajeAlcohol = Integer.parseInt(vista.porcentajeAlcohol.getText());
+                    }catch (NumberFormatException ne){
+                        Util.mensajeError("Introduce bien el porcentaje de alcohol (número entero)");
                         break;
                     }
-                    if (vista.cocheRadioButton.isSelected()) {
-                        modelo.altaCoche(vista.matriculaTxt.getText(),vista.marcaTxt.getText(),
-                                vista.modeloTxt.getText(),vista.fechaMatriculacionDPicker.getDate()
-                                , Integer.parseInt(vista.kmsPlazasTxt.getText()));
-                    } else {
-                        modelo.altaMoto(vista.matriculaTxt.getText(),vista.marcaTxt.getText(),
-                                vista.modeloTxt.getText(),vista.fechaMatriculacionDPicker.getDate()
-                                , Double.parseDouble(vista.kmsPlazasTxt.getText()));
+                    porcentajeAlcohol = Integer.parseInt(vista.porcentajeAlcohol.getText());
+                    double precio = Double.parseDouble(vista.precio.getText());
+
+                    if (porcentajeAlcohol < 0 || precio < 0){
+                        Util.mensajeError("No pueden ser negativos ni el precio ni el porcentaje de alchohol");
+                        break;
+                    }
+                    if (modelo.existeMarca(vista.marcaTxt.getText())) {
+                        Util.mensajeError("Ya existe un Vino con esa Marca" +
+                                "\n"+vista.marcaTxt.getText());
+                        break;
+                    }
+
+                    try {
+                        if (vista.btnVinoBlanco.isSelected()) {
+                            modelo.altaVinoBlanco(vista.marcaTxt.getText(), vista.fechaCreacionDPicker.getDate(),
+                                    vista.fechaCaducidadDPicker.getDate(), porcentajeAlcohol, Double.parseDouble(vista.precio.getText()),
+                                    vista.denominacionOrigen.getSelectedItem().toString(), vista.atributoTxt.getText());
+                        } else
+                            if(vista.btnVinoTinto.isSelected()){
+                                modelo.altaVinoTinto(vista.marcaTxt.getText(), vista.fechaCreacionDPicker.getDate(),
+                                        vista.fechaCaducidadDPicker.getDate(), porcentajeAlcohol, Double.parseDouble(vista.precio.getText()),
+                                        vista.denominacionOrigen.getSelectedItem().toString(), vista.atributoTxt.getText());
+                        }else
+                            if(vista.btnVinoRosado.isSelected()){
+                                modelo.altaRosado(vista.marcaTxt.getText(), vista.fechaCreacionDPicker.getDate(),
+                                        vista.fechaCaducidadDPicker.getDate(), porcentajeAlcohol, Double.parseDouble(vista.precio.getText()),
+                                        vista.denominacionOrigen.getSelectedItem().toString(), vista.atributoTxt.getText());
+                            }
+                    }catch (NumberFormatException ne){
+                        Util.mensajeError("Introduce números decimales");
                     }
                     limpiarCampos();
                     refrescar();
@@ -168,6 +192,7 @@ public class VinotecaControlador {
                         } catch (SAXException ex) {
                             ex.printStackTrace();
                         }
+                        limpiarCampos();
                         refrescar();
                     }
                     break;
@@ -185,11 +210,17 @@ public class VinotecaControlador {
                         }
                     }
                     break;
-                case "Moto":
-                    vista.kmsPlazasLbl.setText("kms");
+                case "VinoTinto":
+                    vista.atributoTxt.setText("Aroma");
                     break;
-                case "Coche":
-                    vista.kmsPlazasLbl.setText("N plazas");
+                case "VinoBlanco":
+                    vista.atributoTxt.setText("Color");
+                    break;
+                case "VinoRosado":
+                    vista.atributoTxt.setText("Sabor");
+                    break;
+                case "Limpiar":
+                    limpiarCampos();
                     break;
             }
         }
@@ -203,6 +234,7 @@ public class VinotecaControlador {
                     System.exit(0);
                 } catch (IOException ex) {
                     ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error al guardar");
                 }
             }
         }
@@ -210,21 +242,23 @@ public class VinotecaControlador {
         @Override
         public void valueChanged(ListSelectionEvent e) {
             if (e.getValueIsAdjusting()) {
-                Vino vehiculoSeleccionado = vista.list1.getSelectedValue();
-                vista.matriculaTxt.setText(vehiculoSeleccionado.getMatricula());
-                vista.modeloTxt.setText(vehiculoSeleccionado.getModelo());
-                vista.marcaTxt.setText(vehiculoSeleccionado.getMarca());
-                vista.fechaMatriculacionDPicker.setDate(vehiculoSeleccionado.getFechaMatriculacion());
-                if (vehiculoSeleccionado instanceof VinoBlanco) {
+                Vino vinoSeleccionado = (Vino )vista.list1.getSelectedValue();
+                vista.marcaTxt.setText(vinoSeleccionado.getMarca());
+                vista.fechaCreacionDPicker.setDate(vinoSeleccionado.getFechaCreacion());
+                vista.fechaCaducidadDPicker.setDate(vinoSeleccionado.getFechaCaducidad());
+                vista.porcentajeAlcohol.setText(String.valueOf(vinoSeleccionado.getPorcentajeAlcohol()));
+                vista.precio.setText((String.valueOf(vinoSeleccionado.getPrecio())));
+                if (vinoSeleccionado instanceof VinoBlanco) {
                     vista.btnVinoBlanco.doClick();
-                    vista.kmsPlazasTxt.setText(String.valueOf(((VinoBlanco) vehiculoSeleccionado).getColor()));
+                    vista.atributoTxt.setText(String.valueOf(((VinoBlanco) vinoSeleccionado).getColor()));
                 } else
-                    if (vehiculoSeleccionado instanceof VinoTinto){
+                    if (vinoSeleccionado instanceof VinoTinto){
                     vista.btnVinoTinto.doClick();
-                    vista.kmsPlazasTxt.setText(String.valueOf(((VinoTinto)vehiculoSeleccionado).getKms()));
+                    vista.atributoTxt.setText(String.valueOf(((VinoTinto)vinoSeleccionado).getAroma()));
                 }else
-                    if(){
-
+                    if(vinoSeleccionado instanceof VinoRosado){
+                        vista.btnVinoTinto.doClick();
+                        vista.atributoTxt.setText(String.valueOf(((VinoRosado)vinoSeleccionado).getSabor()));
                     }
             }
         }

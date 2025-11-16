@@ -20,7 +20,7 @@ public class FormularioPrincipal {
     public JButton importarButton;
     public JButton exportarButton;
     public JList list1;
-    public JTextField atrubitoTxt;
+    public JTextField atributoTxt;
     public JButton limpiarButton;
 
     public JFrame frame;
