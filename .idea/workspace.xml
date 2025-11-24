@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Practica1UD1Daniela:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="09587f3f-4156-4596-84f2-51557f79a9b1" name="Default Changelist" comment="" />
+    <list default="true" id="09587f3f-4156-4596-84f2-51557f79a9b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Practica1UD1Daniela_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/copa-de-vino.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/vino.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1UD1Daniela/com/danielaperez/practica1/base/VinoBlanco.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1UD1Daniela/com/danielaperez/practica1/base/VinoBlanco.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1UD1Daniela/com/danielaperez/practica1/base/VinoRosado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1UD1Daniela/com/danielaperez/practica1/base/VinoRosado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1UD1Daniela/com/danielaperez/practica1/base/VinoTinto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1UD1Daniela/com/danielaperez/practica1/base/VinoTinto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1UD1Daniela/com/danielaperez/practica1/vista/FormularioPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1UD1Daniela/com/danielaperez/practica1/vista/FormularioPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1UD1Daniela/com/danielaperez/practica1/vista/VinotecaControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1UD1Daniela/com/danielaperez/practica1/vista/VinotecaControlador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica1UD1Daniela/com/danielaperez/practica1/vista/VinotecaModelo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Practica1UD1Daniela/com/danielaperez/practica1/vista/VinotecaModelo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/danielaperez/practica1/base/VinoBlanco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/danielaperez/practica1/base/VinoBlanco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/danielaperez/practica1/base/VinoRosado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/danielaperez/practica1/base/VinoRosado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/danielaperez/practica1/base/VinoTinto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/danielaperez/practica1/base/VinoTinto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/danielaperez/practica1/vista/FormularioPrincipal.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/danielaperez/practica1/vista/FormularioPrincipal.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/danielaperez/practica1/vista/FormularioPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/danielaperez/practica1/vista/FormularioPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/danielaperez/practica1/vista/VinotecaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/danielaperez/practica1/vista/VinotecaControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/danielaperez/practica1/vista/VinotecaModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/danielaperez/practica1/vista/VinotecaModelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vinos.conf" beforeDir="false" afterPath="$PROJECT_DIR$/vinos.conf" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,18 +39,27 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="35Le9lN1I0qnono22ZmwUKmgccJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="272" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="201" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/LGoodDatePicker-10.3.1.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ExamenUD1 25-26 T" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.danielaperez.practica1.vista" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\Downloads\Practica1UD1Daniela\img" />
       <recent name="C:\Users\danie\Downloads\Practica1UD1Daniela\libs" />
       <recent name="C:\Users\danie\Downloads\Practica1UD1Daniela\.idea" />
     </key>
@@ -43,6 +76,44 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Application.Principal">
+    <configuration name="Principal (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.danielaperez.practica1.Principal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.danielaperez.practica1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.danielaperez.practica1.Principal" />
+      <module name="Practica1UD1Daniela" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.danielaperez.practica1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Practica1UD1Daniela.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Practica1UD1Daniela_jar/Practica1UD1Daniela.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Principal" />
+        <item itemvalue="Application.Principal (1)" />
+        <item itemvalue="JAR Application.Practica1UD1Daniela.jar" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -53,11 +124,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762893629582</updated>
-      <workItem from="1762893632742" duration="23366000" />
+      <workItem from="1762893632742" duration="57289000" />
+      <workItem from="1763507126492" duration="1129000" />
+      <workItem from="1763913035867" duration="6652000" />
+      <workItem from="1763919979368" duration="2041000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

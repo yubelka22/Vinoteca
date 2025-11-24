@@ -1,12 +1,10 @@
 package com.danielaperez.practica1.vista;
-
 import com.danielaperez.practica1.base.Vino;
 import com.danielaperez.practica1.base.VinoBlanco;
 import com.danielaperez.practica1.base.VinoRosado;
 import com.danielaperez.practica1.base.VinoTinto;
 import com.danielaperez.practica1.util.Util;
 import org.xml.sax.SAXException;
-
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -89,6 +87,7 @@ public class VinotecaControlador implements ActionListener, ListSelectionListene
             vista.btnVinoTinto.addActionListener(listener);
             vista.btnVinoRosado.addActionListener(listener);
             vista.limpiarButton.addActionListener(listener);
+            vista.btnEliminar.addActionListener(listener);
         }
 
         //listener ventana (boton cerrar)
@@ -210,17 +209,27 @@ public class VinotecaControlador implements ActionListener, ListSelectionListene
                         }
                     }
                     break;
-                case "VinoTinto":
+                case "Vino Tinto":
                     vista.atributos.setText("Aroma");
                     break;
-                case "VinoBlanco":
+                case "Vino Blanco":
                     vista.atributos.setText("Color");
                     break;
-                case "VinoRosado":
+                case "Vino Rosado":
                     vista.atributos.setText("Sabor");
                     break;
                 case "Limpiar":
                     limpiarCampos();
+                    break;
+                case "Eliminar":
+                    try {
+                        Vino v = vista.list1.getSelectedValue();
+                        modelo.eliminar(v);
+                        vista.eliminarDatos();
+                        limpiarCampos();
+                    } catch (ArrayIndexOutOfBoundsException ae) {
+                        Util.mensajeError("Selecciona un vino a eliminar");
+                    }
                     break;
             }
         }
@@ -250,14 +259,14 @@ public class VinotecaControlador implements ActionListener, ListSelectionListene
                 vista.precio.setText((String.valueOf(vinoSeleccionado.getPrecio())));
                 if (vinoSeleccionado instanceof VinoBlanco) {
                     vista.btnVinoBlanco.doClick();
-                    vista.atributos.setText(String.valueOf(((VinoBlanco) vinoSeleccionado).getColor()));
+                    vista.atributoTxt.setText(String.valueOf(((VinoBlanco) vinoSeleccionado).getColor()));
                 } else
                     if (vinoSeleccionado instanceof VinoTinto){
                     vista.btnVinoTinto.doClick();
-                    vista.atributos.setText(String.valueOf(((VinoTinto)vinoSeleccionado).getAroma()));
+                    vista.atributoTxt.setText(String.valueOf(((VinoTinto)vinoSeleccionado).getAroma()));
                 }else {
                         vista.btnVinoRosado.doClick();
-                        vista.atributos.setText(String.valueOf(((VinoRosado)vinoSeleccionado).getSabor()));
+                        vista.atributoTxt.setText(String.valueOf(((VinoRosado)vinoSeleccionado).getSabor()));
                     }
             }
         }

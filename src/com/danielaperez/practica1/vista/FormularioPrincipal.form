@@ -24,6 +24,8 @@
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
     <colspec value="fill:d:noGrow"/>
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:92px:noGrow"/>
@@ -32,10 +34,11 @@
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:94px:noGrow"/>
     <constraints>
-      <xy x="21" y="20" width="423" height="426"/>
+      <xy x="21" y="20" width="471" height="466"/>
     </constraints>
     <properties>
-      <background color="-14655213"/>
+      <background color="-593414"/>
+      <font name="Cambria"/>
     </properties>
     <border type="none"/>
     <children>
@@ -45,6 +48,7 @@
           <forms/>
         </constraints>
         <properties>
+          <font name="Cambria"/>
           <text value="Tipo de Vino"/>
         </properties>
       </component>
@@ -54,6 +58,8 @@
           <forms/>
         </constraints>
         <properties>
+          <font name="Cambria" size="11"/>
+          <selected value="true"/>
           <text value="Vino Blanco"/>
         </properties>
       </component>
@@ -63,6 +69,7 @@
           <forms/>
         </constraints>
         <properties>
+          <font name="Cambria" size="11"/>
           <text value="Vino Tinto"/>
         </properties>
       </component>
@@ -72,6 +79,7 @@
           <forms/>
         </constraints>
         <properties>
+          <font name="Cambria" size="11"/>
           <text value="Vino Rosado"/>
         </properties>
       </component>
@@ -81,6 +89,7 @@
           <forms/>
         </constraints>
         <properties>
+          <font name="Cambria"/>
           <text value="Marca"/>
         </properties>
       </component>
@@ -99,6 +108,7 @@
           <forms/>
         </constraints>
         <properties>
+          <font name="Cambria"/>
           <text value="Fecha Creacion"/>
         </properties>
       </component>
@@ -108,6 +118,7 @@
           <forms/>
         </constraints>
         <properties>
+          <font name="Cambria"/>
           <text value="Fecha Caducidad"/>
         </properties>
       </component>
@@ -117,6 +128,7 @@
           <forms/>
         </constraints>
         <properties>
+          <font name="Cambria"/>
           <text value="Porcentaje Alcohol"/>
         </properties>
       </component>
@@ -126,6 +138,7 @@
           <forms/>
         </constraints>
         <properties>
+          <font name="Cambria"/>
           <text value="Precio"/>
         </properties>
       </component>
@@ -134,14 +147,18 @@
           <grid row="4" column="2" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Cambria"/>
+        </properties>
       </component>
       <component id="96ccc" class="com.github.lgooddatepicker.components.DatePicker" binding="fechaCaducidadDPicker">
         <constraints>
           <grid row="6" column="2" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Cambria"/>
+        </properties>
       </component>
       <component id="4e0d3" class="javax.swing.JTextField" binding="precio">
         <constraints>
@@ -150,7 +167,9 @@
           </grid>
           <forms defaultalign-horz="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Cambria"/>
+        </properties>
       </component>
       <component id="3f7f0" class="javax.swing.JTextField" binding="porcentajeAlcohol">
         <constraints>
@@ -159,7 +178,9 @@
           </grid>
           <forms defaultalign-horz="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Cambria"/>
+        </properties>
       </component>
       <component id="e7c24" class="javax.swing.JLabel">
         <constraints>
@@ -167,6 +188,7 @@
           <forms/>
         </constraints>
         <properties>
+          <font name="Cambria"/>
           <text value="Denominacion Origen"/>
         </properties>
       </component>
@@ -176,6 +198,7 @@
           <forms/>
         </constraints>
         <properties>
+          <font name="Cambria"/>
           <model>
             <item value="Rioja"/>
             <item value="Ribera del Duero"/>
@@ -191,6 +214,8 @@
           <forms/>
         </constraints>
         <properties>
+          <background color="-5216868"/>
+          <font name="Cambria"/>
           <text value="Crear"/>
         </properties>
       </component>
@@ -200,6 +225,8 @@
           <forms/>
         </constraints>
         <properties>
+          <background color="-5216868"/>
+          <font name="Cambria"/>
           <text value="Importar"/>
         </properties>
       </component>
@@ -209,12 +236,14 @@
           <forms/>
         </constraints>
         <properties>
+          <background color="-5216868"/>
+          <font name="Cambria"/>
           <text value="Exportar"/>
         </properties>
       </component>
       <scrollpane id="a423">
         <constraints>
-          <grid row="16" column="2" row-span="7" col-span="5" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="16" column="2" row-span="9" col-span="5" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false" defaultalign-vert="false"/>
         </constraints>
         <properties/>
@@ -222,7 +251,9 @@
         <children>
           <component id="34e77" class="javax.swing.JList" binding="list1" default-binding="true">
             <constraints/>
-            <properties/>
+            <properties>
+              <font name="Cambria"/>
+            </properties>
           </component>
         </children>
       </scrollpane>
@@ -232,7 +263,8 @@
           <forms/>
         </constraints>
         <properties>
-          <text value="Atributo"/>
+          <font name="Cambria"/>
+          <text value="Color"/>
         </properties>
       </component>
       <component id="8638c" class="javax.swing.JTextField" binding="atributoTxt">
@@ -242,7 +274,9 @@
           </grid>
           <forms defaultalign-horz="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Cambria"/>
+        </properties>
       </component>
       <component id="16a40" class="javax.swing.JButton" binding="limpiarButton" default-binding="true">
         <constraints>
@@ -250,7 +284,20 @@
           <forms/>
         </constraints>
         <properties>
+          <background color="-5216868"/>
+          <font name="Cambria"/>
           <text value="Limpiar"/>
+        </properties>
+      </component>
+      <component id="8deec" class="javax.swing.JButton" binding="btnEliminar">
+        <constraints>
+          <grid row="24" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <background color="-5216868"/>
+          <font name="Cambria"/>
+          <text value="Eliminar"/>
         </properties>
       </component>
     </children>
