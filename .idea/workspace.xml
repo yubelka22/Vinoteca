@@ -46,10 +46,17 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+<<<<<<< HEAD
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="300" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="201" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ExamenUD1 25-26 T" />
+>>>>>>> 3d9aec1e8882d01c5d26fd7e520deafcf6fb2159
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -128,7 +135,10 @@
       <workItem from="1763507126492" duration="1129000" />
       <workItem from="1763913035867" duration="6652000" />
       <workItem from="1763919979368" duration="2041000" />
+<<<<<<< HEAD
       <workItem from="1779928165942" duration="2962000" />
+=======
+>>>>>>> 3d9aec1e8882d01c5d26fd7e520deafcf6fb2159
     </task>
     <servers />
   </component>
