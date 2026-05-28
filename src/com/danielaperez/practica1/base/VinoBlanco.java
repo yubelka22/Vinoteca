@@ -26,6 +26,6 @@ public class VinoBlanco extends Vino {
 
     @Override
     public String toString() {
-        return "VinoBlanco:"  +getMarca()+" "+getFechaCreacion()+" "+getFechaCaducidad();
+        return "VinoBlanco:"  + super.toString() + "Color: " + color;
     }
 }

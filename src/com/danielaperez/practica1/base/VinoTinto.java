@@ -25,6 +25,6 @@ public class VinoTinto extends Vino {
 
     @Override
     public String toString() {
-        return "VinoTinto:" +getMarca()+" "+getFechaCreacion()+" "+getFechaCaducidad();
+        return "VinoTinto:" + super.toString() + "Aroma: " + aroma;
     }
 }

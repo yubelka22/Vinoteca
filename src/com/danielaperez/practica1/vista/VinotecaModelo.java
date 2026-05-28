@@ -25,9 +25,7 @@ import java.util.ArrayList;
 
 public class VinotecaModelo {
 
-
     private ArrayList<Vino> listaVinos;
-
 
     public VinotecaModelo() {
         listaVinos = new ArrayList<Vino>();
@@ -69,6 +67,11 @@ public class VinotecaModelo {
             }
         }
         return false;
+    }
+
+    public void eliminar(Vino v){
+        listaVinos.remove(v);
+
     }
 
     //exportarXML
@@ -134,7 +137,7 @@ public class VinotecaModelo {
             nodoVino.appendChild(nodoDatos);
 
             texto = documento.createTextNode(String.valueOf(unVino.getPrecio()));
-            nodoVino.appendChild(texto);
+            nodoDatos.appendChild(texto);
 
             nodoDatos = documento.createElement("denominacion-origen");
             nodoVino.appendChild(nodoDatos);
@@ -170,7 +173,6 @@ public class VinotecaModelo {
 
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
         transformer.transform(source, result);
-
     }
 
     //importarXML
@@ -181,7 +183,7 @@ public class VinotecaModelo {
         VinoRosado nuevoVinoRosado = null;
 
 
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newDefaultInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document documento = builder.parse(fichero);
 
@@ -190,7 +192,7 @@ public class VinotecaModelo {
         for (int i = 0; i < listaElementos.getLength(); i++) {
             Element nodoVino = (Element) listaElementos.item(i);
 
-            if (nodoVino.getTagName().equals("Vino Blanco")) {
+            if (nodoVino.getTagName().equals("VinoBlanco")) {
                 nuevoVinoBlanco = new VinoBlanco();
                 nuevoVinoBlanco.setMarca(nodoVino.getChildNodes().item(0).getTextContent());
                 nuevoVinoBlanco.setFechaCreacion(LocalDate.parse(nodoVino.getChildNodes().item(1).getTextContent()));
@@ -201,7 +203,7 @@ public class VinotecaModelo {
                 nuevoVinoBlanco.setColor(nodoVino.getChildNodes().item(6).getTextContent());
                 listaVinos.add(nuevoVinoBlanco);
             } else {
-                if (nodoVino.getTagName().equals("Vino Tinto")) {
+                if (nodoVino.getTagName().equals("VinoTinto")) {
                     nuevoVinoTinto = new VinoTinto();
                     nuevoVinoTinto.setMarca(nodoVino.getChildNodes().item(0).getTextContent());
                     nuevoVinoTinto.setFechaCreacion(LocalDate.parse(nodoVino.getChildNodes().item(1).getTextContent()));
@@ -211,7 +213,7 @@ public class VinotecaModelo {
                     nuevoVinoTinto.setDenominacionOrigen(nodoVino.getChildNodes().item(5).getTextContent());
                     nuevoVinoTinto.setAroma(nodoVino.getChildNodes().item(6).getTextContent());
                     listaVinos.add(nuevoVinoTinto);
-                } else if (nodoVino.getTagName().equals("Vino Rosado")) {
+                } else if (nodoVino.getTagName().equals("VinoRosado")) {
                     nuevoVinoRosado = new VinoRosado();
                     nuevoVinoRosado.setMarca(nodoVino.getChildNodes().item(0).getTextContent());
                     nuevoVinoRosado.setFechaCreacion(LocalDate.parse(nodoVino.getChildNodes().item(1).getTextContent()));

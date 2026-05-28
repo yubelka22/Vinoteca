@@ -27,7 +27,7 @@ public class VinoRosado extends Vino {
 
     @Override
     public String toString() {
-        return "VinoRosado:" + getMarca() + " " + getFechaCreacion() + " " + getFechaCaducidad();
+        return "VinoRosado:" + super.toString() + "Sabor: " + sabor;
 
     }
 }
